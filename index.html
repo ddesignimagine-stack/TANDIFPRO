@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANDIF PRO - Service de Nettoyage Professionnel</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        marine: '#0f2942',
+                        tealCustom: '#0d9488',
+                        lightBg: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Cairo', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lightBg text-gray-800 font-sans antialiased">
+
+    <!-- Sticky Header with WhatsApp -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="Gemini_Generated_Image_em8a52em8a52em8a.jpg" alt="TANDIF PRO Logo" class="h-20 w-auto object-contain">
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-6 text-marine font-semibold">
+                <button onclick="showPage('home')" class="hover:text-tealCustom transition">Accueil</button>
+                <button onclick="showPage('services')" class="hover:text-tealCustom transition">Services</button>
+                <button onclick="showPage('about')" class="hover:text-tealCustom transition">À propos</button>
+                <button onclick="showPage('contact')" class="hover:text-tealCustom transition">Contact</button>
+            </nav>
+
+            <!-- WhatsApp CTA Top Button -->
+            <div>
+                <a href="https://wa.me/212661281197?text=Bonjour,%20je%20souhaite%20demander%20un%20devis%20pour%20les%20services%20de%20nettoyage." target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-full font-semibold flex items-center space-x-2 shadow-lg transition transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span class="hidden sm:inline">WhatsApp Devis</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container / Views -->
+    <main id="app-container">
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page-view">
+            <!-- Hero Section -->
+            <section class="relative bg-marine text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="max-w-5xl mx-auto text-center relative z-10">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
+                        Services de Nettoyage Professionnel <br>
+                        <span class="text-tealCustom font-arabic">خدمات تنظيف احترافية</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                        Des solutions de propreté sur mesure pour les particuliers et les professionnels à Salé et environs. Qualité et efficacité garanties.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="https://wa.me/212661281197?text=Bonjour,%20je%20veux%20demander%20un%20devis." target="_blank" class="bg-tealCustom hover:bg-teal-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Demander un Devis par WhatsApp</span>
+                        </a>
+                        <button onclick="showPage('services')" class="bg-white hover:bg-gray-100 text-marine font-bold px-8 py-4 rounded-xl shadow-lg transition">
+                            Nos Services
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section Preview -->
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-marine mb-2">Nos Domaines d'Intervention / مجالات تدخلنا</h2>
+                    <p class="text-gray-600">Cliquez sur un service pour voir tous les détails</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div onclick="openServiceDetail('residentiel')" class="bg-white rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Nettoyage Résidentiel" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-marine mb-1">Nettoyage Résidentiel</h3>
+                            <p class="text-tealCustom font-arabic font-bold text-sm mb-2">تنظيف المنازل والفيلاوات</p>
+                            <p class="text-gray-600 text-sm mb-4">Nettoyage complet de fond en comble pour villas, appartements et résidences privées.</p>
+                            <span class="text-tealCustom font-semibold flex items-center">En savoir plus <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div onclick="openServiceDetail('bureaux')" class="bg-white rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Bureaux" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-marine mb-1">Bureaux & Espaces Professionnels</h3>
+                            <p class="text-tealCustom font-arabic font-bold text-sm mb-2">تنظيف المكاتب والشركات</p>
+                            <p class="text-gray-600 text-sm mb-4">Maintenez un espace de travail propre, sain et accueillant pour vos clients et employés.</p>
+                            <span class="text-tealCustom font-semibold flex items-center">En savoir plus <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div onclick="openServiceDetail('finchanticer')" class="bg-white rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Fin de Chantier" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-marine mb-1">Nettoyage Fin de Chantier</h3>
+                            <p class="text-tealCustom font-arabic font-bold text-sm mb-2">تنظيف بعد البناء والورش</p>
+                            <p class="text-gray-600 text-sm mb-4">Élimination des traces de peinture, poussières et gravats après travaux ou rénovation.</p>
+                            <span class="text-tealCustom font-semibold flex items-center">En savoir plus <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SERVICES LIST PAGE -->
+        <div id="page-services" class="page-view hidden py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-marine mb-8 text-center">Tous Nos Services Professionnels / جميع خدماتنا الاحترافية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow p-6 border-t-4 border-tealCustom">
+                    <h3 class="text-xl font-bold text-marine mb-1">Nettoyage Résidentiel</h3>
+                    <p class="text-tealCustom font-arabic font-bold text-sm mb-2">تنظيف المنازل</p>
+                    <p class="text-gray-600 mb-4">Intervention détaillée pièce par pièce pour un intérieur éclatant de propreté.</p>
+                    <button onclick="openServiceDetail('residentiel')" class="bg-marine text-white px-4 py-2 rounded-lg text-sm font-semibold">Voir Détails</button>
+                </div>
+                <div class="bg-white rounded-2xl shadow p-6 border-t-4 border-tealCustom">
+                    <h3 class="text-xl font-bold text-marine mb-1">Bureaux & Commerces</h3>
+                    <p class="text-tealCustom font-arabic font-bold text-sm mb-2">تنظيف المكاتب والمحلات</p>
+                    <p class="text-gray-600 mb-4">Nettoyage des vitrines, sols, bureaux et salles de réunion avec des produits écologiques.</p>
+                    <button onclick="openServiceDetail('bureaux')" class="bg-marine text-white px-4 py-2 rounded-lg text-sm font-semibold">Voir Détails</button>
+                </div>
+                <div class="bg-white rounded-2xl shadow p-6 border-t-4 border-tealCustom">
+                    <h3 class="text-xl font-bold text-marine mb-1">Nettoyage Fin de Chantier</h3>
+                    <p class="text-tealCustom font-arabic font-bold text-sm mb-2">تنظيف بعد الأشغال وبناء</p>
+                    <p class="text-gray-600 mb-4">Remise en état complète après construction ou rénovation immobilière.</p>
+                    <button onclick="openServiceDetail('finchanticer')" class="bg-marine text-white px-4 py-2 rounded-lg text-sm font-semibold">Voir Détails</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICE DETAIL VIEW -->
+        <div id="page-service-detail" class="page-view hidden py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showPage('services')" class="text-tealCustom font-semibold mb-6 flex items-center hover:underline">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Retour aux services / العودة إلى الخدمات
+            </button>
+            <div id="service-detail-content" class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- Dynamically filled via JS -->
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="page-about" class="page-view hidden py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-marine mb-6">À Propos de TANDIF PRO / من نحن</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                TANDIF PRO est votre partenaire de confiance à Salé et ses environs pour tous vos besoins de nettoyage professionnel. Forts d'une expertise reconnue, nous mettons à votre disposition une équipe qualifiée et du matériel haut de gamme pour garantir un résultat impeccable.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                Notre engagement : la satisfaction totale de nos clients à travers des prestations rigoureuses, rapides et adaptées à chaque budget.
+            </p>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="page-contact" class="page-view hidden py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-marine mb-6">Contactez-Nous / اتصل بنا</h2>
+            <div class="bg-white rounded-2xl shadow p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-marine mb-4">Informations</h3>
+                    <p class="text-gray-600 mb-3"><i class="fa-solid fa-location-dot text-tealCustom mr-2"></i> Salé, Maroc</p>
+                    <p class="text-gray-600 mb-3"><i class="fa-brands fa-whatsapp text-green-600 mr-2"></i> +212 661-281197</p>
+                    <p class="text-gray-600 mb-6"><i class="fa-solid fa-envelope text-tealCustom mr-2"></i> contact@tandifpro.ma</p>
+                    <a href="https://wa.me/212661281197?text=Bonjour,%20je%20souhaite%20vous%20contacter." target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition">
+                        Discuter sur WhatsApp
+                    </a>
+                </div>
+                <div class="bg-lightBg p-6 rounded-xl flex flex-col justify-center items-center text-center">
+                    <i class="fa-solid fa-headset text-tealCustom text-5xl mb-4"></i>
+                    <h4 class="font-bold text-lg text-marine mb-2">Besoin d'un devis immédiat ?</h4>
+                    <p class="text-gray-600 text-sm mb-4">Cliquez ci-dessous pour lancer une discussion instantanée sur WhatsApp avec notre équipe.</p>
+                    <a href="https://wa.me/212661281197?text=Bonjour,%20je%20veux%20un%20devis%20rapide." target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-green-700">
+                        Ouvrir WhatsApp (+212661281197)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-marine text-white py-8 mt-16 text-center">
+        <p class="text-sm text-gray-400">&copy; 2026 TANDIF PRO - Service de Nettoyage Professionnel. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JavaScript for SPA and dynamic detail loading -->
+    <script>
+        const servicesData = {
+            residentiel: {
+                title: "Nettoyage Résidentiel",
+                titleAr: "تنظيف المنازل والفيلاوات",
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+                description: "Un service complet et minutieux pour redonner éclat et fraîcheur à votre domicile. Nous intervenons pour le nettoyage des sols, vitres, cuisines et salles de bains avec des produits professionnels sûrs et respectueux de vos surfaces.",
+                descriptionAr: "خدمة شاملة ودقيقة لإعادة البريق والانتشال لمنزلك. نتدخل لتنظيف الأرضيات، النوافذ، المطابخ، والحمامات باستخدام منتجات احترافية آمنة.",
+                features: [
+                    "Nettoyage profond des sols et carrelages / تنظيف عميق للأرضيات والزليج",
+                    "Dépoussiérage et lavage des vitres / إزالة الغبار وغسل النوافذ",
+                    "Désinfection des sanitaires et cuisine / تعقيم المرافق الصحية والمطبخ",
+                    "Shampouinage des tapis et canapés (sur demande) / تنظيف الزرابي والأريكات (عند الطلب)"
+                ]
+            },
+            bureaux: {
+                title: "Bureaux & Espaces Professionnels",
+                titleAr: "تنظيف المكاتب والفضاءات المهنية",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
+                description: "Offrez à vos collaborateurs et clients un environnement de travail impeccable. Un bureau propre renforce l'image professionnelle de votre entreprise.",
+                descriptionAr: "امنح متعاونيك وعملائك بيئة عمل مثالية ونظيفة. المكتب النظيف يعزز الصورة المهنية لشركتك.",
+                features: [
+                    "Entretien régulier des postes de travail / الصيانة المنتظمة لمقاعد العمل",
+                    "Nettoyage des salles de réunion et réception / تنظيف قاعات الاجتماعات والاستقبال",
+                    "Gestion des déchets et désinfection / تدبير النفايات والتعقيم",
+                    "Lavage des vitres professionnelles / غسل النوافذ المهنية"
+                ]
+            },
+            finchanticer: {
+                title: "Nettoyage Fin de Chantier",
+                titleAr: "تنظيف بعد الأشغال والبناء",
+                image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1000&q=80",
+                description: "Après des travaux de construction ou de rénovation, votre bien a besoin d'une remise en état professionnelle. Nous éliminons toute trace de plâtre, peinture et poussière.",
+                descriptionAr: "بعد أعمال البناء أو التجديد، يحتاج عقارك إلى إعادة تأهيل احترافية. نقوم بإزالة كافة آثار الجبس، الصباغة والغبار.",
+                features: [
+                    "Évacuation des poussières fines / إزالة الغبار الدقيق",
+                    "Enlèvement des taches de peinture et colle / إزالة بقع الصباغة والغراء",
+                    "Lavage minutieux des vitres et encadrements / غسل دقيق للنوافذ والأطر",
+                    "Nettoyage et dégraissage des sols / تنظيف وإزالة الدهون من الأرضيات"
+                ]
+            }
+        };
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
+            document.getElementById('page-' + pageId).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openServiceDetail(serviceKey) {
+            const data = servicesData[serviceKey];
+            if (!data) return;
+
+            const container = document.getElementById('service-detail-content');
+            container.innerHTML = `
+                <img src="${data.image}" alt="${data.title}" class="w-full h-72 object-cover rounded-xl mb-6 shadow">
+                <h2 class="text-3xl font-bold text-marine mb-1">${data.title}</h2>
+                <h3 class="text-xl font-bold text-tealCustom font-arabic mb-4">${data.titleAr}</h3>
+                
+                <p class="text-gray-700 leading-relaxed mb-3">${data.description}</p>
+                <p class="text-gray-700 font-arabic leading-relaxed mb-6">${data.descriptionAr}</p>
+
+                <h4 class="font-bold text-marine mb-3 text-lg">Ce que comprend notre prestation / ما تتضمنه خدمتنا:</h4>
+                <ul class="list-disc list-inside space-y-2 text-gray-600 mb-8">
+                    ${data.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+                <a href="https://wa.me/212661281197?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20service:%20${encodeURIComponent(data.title)}" target="_blank" class="inline-flex items-center space-x-2 bg-green-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-green-700 transition shadow">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Demander un devis pour ce service</span>
+                </a>
+            `;
+
+            showPage('service-detail');
+        }
+    </script>
+</body>
+</html>
